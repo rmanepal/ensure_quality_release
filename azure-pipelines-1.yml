@@ -21,7 +21,7 @@ steps:
         packageType: sdk
     - script: |
         mkdir release
-        zip release/output.zip bin/*
+        zip release/output.zip *
       displayName: 'dotnet build $(buildConfiguration)'
 
     - task: PublishBuildArtifacts@1
