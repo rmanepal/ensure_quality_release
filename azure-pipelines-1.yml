@@ -11,6 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  azureServiceConnectionId: 'ef797a3b-ebc6-4c45-a0f0-817c4447b0ef'
 
 steps:
 
@@ -33,7 +34,7 @@ steps:
     - task: AzureRmWebAppDeployment@4
       displayName: 'Deploy Azure App Service'
       inputs:
-        azureSubscription: '$(Parameters.ConnectedServiceName)'
+        azureSubscription: '$(azureServiceConnectionId)'
         appType: 'webApp'
         WebAppName: '$(Parameters.WebAppName)'
         enableCustomDeployment: true
