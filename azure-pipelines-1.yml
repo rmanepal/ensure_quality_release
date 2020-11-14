@@ -29,3 +29,12 @@ steps:
       inputs:
         pathtoPublish: '$(System.DefaultWorkingDirectory)/release' 
         artifactName: 'output' 
+
+    - task: AzureRmWebAppDeployment@4
+      displayName: 'Deploy Azure App Service'
+      inputs:
+        azureSubscription: '$(Parameters.ConnectedServiceName)'
+        appType: 'webApp'
+        WebAppName: '$(Parameters.WebAppName)'
+        enableCustomDeployment: true
+        DeploymentType: runFromZip
