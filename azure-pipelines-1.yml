@@ -21,7 +21,7 @@ steps:
         packageType: sdk
     - script: |
         mkdir release
-        cp app.zip release/output.zip *
+        cp app.zip release/
       displayName: 'dotnet build $(buildConfiguration)'
 
     - task: PublishBuildArtifacts@1
