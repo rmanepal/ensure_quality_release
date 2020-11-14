@@ -19,11 +19,11 @@ steps:
       inputs:
         version: '3.1.x'
         packageType: sdk
-    - script: zip output.zip *
+    - script: zip Release/output.zip bin/*
       displayName: 'dotnet build $(buildConfiguration)'
 
     - task: PublishBuildArtifacts@1
       displayName: "Upload Artifacts"
       inputs:
-        pathtoPublish: '$(System.DefaultWorkingDirectory)' 
+        pathtoPublish: '$(System.DefaultWorkingDirectory)/Release' 
         artifactName: 'output' 
