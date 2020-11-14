@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  azureServiceConnectionId: 'ef797a3b-ebc6-4c45-a0f0-817c4447b0ef'
+  azureServiceConnectionId: 'Azure subscription 1(ef797a3b-ebc6-4c45-a0f0-817c4447b0ef)'
 
 steps:
 
