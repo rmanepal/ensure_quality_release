@@ -19,7 +19,7 @@ steps:
       inputs:
         version: '3.1.x'
         packageType: sdk
-    - script: dotnet build --configuration $(buildConfiguration)
+    - script: ls
       displayName: 'dotnet build $(buildConfiguration)'
       
     - task: DotNetCoreCLI@2
@@ -33,5 +33,5 @@ steps:
     - task: PublishBuildArtifacts@1
       displayName: "Upload Artifacts"
       inputs:
-        pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+        pathtoPublish: '$(System.DefaultWorkingDirectory)' 
         artifactName: 'hanselminutes' 
