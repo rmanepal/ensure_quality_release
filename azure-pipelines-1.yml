@@ -26,4 +26,4 @@ steps:
       displayName: "Upload Artifacts"
       inputs:
         pathtoPublish: '$(System.DefaultWorkingDirectory)' 
-        artifactName: 'output.zip' 
+        artifactName: 'output' 
