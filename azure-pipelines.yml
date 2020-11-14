@@ -23,6 +23,8 @@ variables:
   DOTNET_VERSION: '3.1.x'   
 
   AZURE_WEBAPP_PACKAGE_PATH: '.'
+
+  buildConfiguration: 'Release'
     
 steps: 
 
@@ -40,7 +42,7 @@ steps:
       inputs:
         command: 'publish'
         publishWebProjects: true
-        arguments: '-r linux-x64 --configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+        arguments: '-r linux-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
         zipAfterPublish: true
 
     - task: PublishBuildArtifacts@1
