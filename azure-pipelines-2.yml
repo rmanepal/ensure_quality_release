@@ -3,24 +3,60 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+
+variables:
+  terraform_folder: 'terraform'
+  terraform_environment: 'environment/test/'
+
 trigger:
 - master
 
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
+stages:
+- stage: Deploy VM
+  jobs:
+  - job: Deploy
+    steps:
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
+      displayName: 'Install Terraform 0.12.29'
+      inputs:
+        terraformVersion: 0.12.29
 
-- task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
-  displayName: 'Install Terraform 0.12.29'
-  inputs:
-    terraformVersion: 0.12.29
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
+      displayName: 'Terraform : azurerm'
+      inputs:
+        command: init
+        backendServiceArm: 'Azure subscription 1 (ef797a3b-ebc6-4c45-a0f0-817c4447b0ef)'
+        backendAzureRmResourceGroupName: azuredevopsresource
+        backendAzureRmStorageAccountName: azurestorageudacity
+        backendAzureRmContainerName: azurecontainer
+        backendAzureRmKey: test.tfstate
+        workingDirectory: '$(Build.SourcesDirectory)/$(terraform_environment)'
+    
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
+      displayName: 'Terraform : azurerm'
+      inputs:
+        command: plan
+        environmentServiceNameAzureRM: 'Azure subscription 1 (ef797a3b-ebc6-4c45-a0f0-817c4447b0ef)'
+        backendServiceArm: 'Azure subscription 1 (ef797a3b-ebc6-4c45-a0f0-817c4447b0ef)'
+        backendAzureRmResourceGroupName: azuredevopsresource
+        backendAzureRmStorageAccountName: azurestorageudacity
+        backendAzureRmContainerName: azurecontainer
+        backendAzureRmKey: test.tfstate
+        workingDirectory: '$(Build.SourcesDirectory)/$(terraform_environment)'
 
-- task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
-  displayName: 'Terraform : azurerm'
-  inputs:
-    backendServiceArm: 'Azure subscription 1 (ef797a3b-ebc6-4c45-a0f0-817c4447b0ef)'
-    backendAzureRmResourceGroupName: azuredevopsresource
-    backendAzureRmStorageAccountName: azurestorageudacity
-    backendAzureRmContainerName: azurecontainer
-    backendAzureRmKey: test.tfstate
+
+
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
+      displayName: 'Terraform : azurerm'
+      inputs:
+        command: apply 
+        environmentServiceNameAzureRM: 'Azure subscription 1 (ef797a3b-ebc6-4c45-a0f0-817c4447b0ef)'
+        backendServiceArm: 'Azure subscription 1 (ef797a3b-ebc6-4c45-a0f0-817c4447b0ef)'
+        backendAzureRmResourceGroupName: azuredevopsresource
+        backendAzureRmStorageAccountName: azurestorageudacity
+        backendAzureRmContainerName: azurecontainer
+        backendAzureRmKey: test.tfstate
+        workingDirectory: '$(Build.SourcesDirectory)/$(terraform_environment)'
