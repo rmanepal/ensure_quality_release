@@ -5,8 +5,8 @@
 
 
 variables:
-  terraform_folder: 'terraform'
-  terraform_environment: 'environment/test/'
+  terraformfolder: 'terraform'
+  terraformenvironment: 'environment/test/'
 
 trigger:
 - master
@@ -33,7 +33,7 @@ stages:
         backendAzureRmStorageAccountName: azurestorageudacity
         backendAzureRmContainerName: azurecontainer
         backendAzureRmKey: test.tfstate
-        workingDirectory: '$(Build.SourcesDirectory)/$(terraform_environment)'
+        workingDirectory: '$(Build.SourcesDirectory)/$(terraformenvironment)'
     
     - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
       displayName: 'Terraform : azurerm'
@@ -45,7 +45,7 @@ stages:
         backendAzureRmStorageAccountName: azurestorageudacity
         backendAzureRmContainerName: azurecontainer
         backendAzureRmKey: test.tfstate
-        workingDirectory: '$(Build.SourcesDirectory)/$(terraform_environment)'
+        workingDirectory: '$(Build.SourcesDirectory)/$(terraformenvironment)'
 
 
 
@@ -59,4 +59,4 @@ stages:
         backendAzureRmStorageAccountName: azurestorageudacity
         backendAzureRmContainerName: azurecontainer
         backendAzureRmKey: test.tfstate
-        workingDirectory: '$(Build.SourcesDirectory)/$(terraform_environment)'
+        workingDirectory: '$(Build.SourcesDirectory)/$(terraformenvironment)'
