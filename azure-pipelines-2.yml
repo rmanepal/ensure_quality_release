@@ -15,7 +15,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-- stage: Deploy VM
+- stage: Deploy
   jobs:
   - job: Deploy
     steps:
