@@ -1,17 +1,17 @@
 resource "azurerm_network_security_group" "nsg" {
-  name                = "${var.application_type}-${var.resource_type}"
-  location            = "${var.location}"
-  resource_group_name = "${var.resource_group}"
+  name                = format("%s-%s",var.application_type, var.resource_type)
+  location            = var.location
+  resource_group_name = var.resource_group
 
   security_rule {
-    name                       = "${var.application_type}-${var.resource_type}-5000"
+    name                       = format("%s-%s-%s",var.application_type, var.resource_type, "5000")
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "5000"
-    source_address_prefix      = "${var.address_prefix_test}"
+    source_address_prefix      = var.address_prefix_test
     destination_address_prefix = "*"
   }
   security_rule {

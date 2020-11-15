@@ -13,3 +13,8 @@ variable "application_type" {}
 variable tier {}
 variable deployment {}
 
+variable address_space{}
+variable address_prefix_test{}
+variable virtual_network_name{}
+
+

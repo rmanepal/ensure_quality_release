@@ -16,5 +16,5 @@ variable "resource_group" {
 
 # Tags
 variable "tags" {
-  type = "map"
+  default = "maps"
 }
