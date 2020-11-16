@@ -25,6 +25,9 @@ variables:
   # Python version: 3.7
   pythonVersion: '3.7'
 
+  # postman resource folder
+  postman: 'postman'
+
 stages:
 - stage: Build
   jobs:
@@ -40,7 +43,7 @@ stages:
 
     - script: |
           ls
-          newman run Starter_APIs.postman_collection.json --reporters cli,junit --reporter-junit-export junitReport.xml
+          newman run '$(postman)/Starter_APIs.postman_collection.json' --reporters cli,junit --reporter-junit-export junitReport.xml
           ls
       workingDirectory: '$(build.sourcesdirectory)'
       displayName: 'Run postman tests'
