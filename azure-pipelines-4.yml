@@ -131,9 +131,9 @@ stages:
                 sudo apt-get install unzip -y
                 sudo apt-get install -y chromium-browser 
                 pip3 install selenium
-                wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
-                unzip chromedriver_linux64.zip
-                chmod +x chromedriver
+                sudo wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+                sudo unzip chromedriver_linux64.zip
+                sudo chmod +x chromedriver
                 export PATH=$PATH:/home/azureuser:/bin
 #python3 selenium/ui_automation.py                
 # stages:
