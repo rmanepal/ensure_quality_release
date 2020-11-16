@@ -135,7 +135,7 @@ stages:
                 unzip chromedriver_linux64.zip
                 chmod +x chromedriver
                 export PATH=$PATH:/home/azureuser:/bin
-                python3 ui_automation.py
+                python3 selenium/ui_automation.py
 # stages:
 # - stage: Build
 #   displayName: Build stage
