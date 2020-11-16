@@ -135,10 +135,13 @@ stages:
                 
                 export PATH=$PATH:/home/azureuser:/bin
                 sudo python3 '$(Pipeline.Workspace)/$(selenium)/ui_automation.py'
-# sudo wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
-# sudo unzip chromedriver_linux64.zip
-# sudo chmod +x chromedriver
-#python3 selenium/ui_automation.py                
+                sudo wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+                sudo unzip chromedriver_linux64.zip
+                sudo chmod +x chromedriver
+                sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+                sudo apt install ./google-chrome-stable_current_amd64.deb
+                
+                python3 selenium/ui_automation.py                
 # stages:
 # - stage: Build
 #   displayName: Build stage
