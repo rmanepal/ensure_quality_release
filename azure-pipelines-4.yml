@@ -86,7 +86,7 @@ stages:
 
     - upload: '$(build.sourcesdirectory)/$(selenium)'
       displayName: 'Upload selenium folder'
-      artifact: drop
+      artifact: selenium
 
 - stage: Deploy
   displayName: 'Deployment stage'
