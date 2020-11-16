@@ -131,7 +131,7 @@ stages:
                 sudo apt-get install unzip -y
                 sudo apt-get install -y chromium-browser 
                 pip3 install selenium
-                wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip -y
+                wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
                 unzip chromedriver_linux64.zip
                 chmod +x chromedriver
                 export PATH=$PATH:/home/azureuser:/bin
