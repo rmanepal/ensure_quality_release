@@ -11,7 +11,11 @@ INVENTORY_ITEM = 'inventory_item'
 # Start the browser and login with standard_user
 def login (user, password):
     print ('Starting the browser...')
-    driver = webdriver.Chrome("/home/azureuser/chromedriver")
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome("/home/azureuser/chromedriver", options=chrome_options)
     print ('Browser started successfully. Navigating to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
 
