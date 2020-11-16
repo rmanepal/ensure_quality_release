@@ -11,7 +11,7 @@ INVENTORY_ITEM = 'inventory_item'
 # Start the browser and login with standard_user
 def login (user, password):
     print ('Starting the browser...')
-    chrome_options = Options()
+    chrome_options = ChromeOptions()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
