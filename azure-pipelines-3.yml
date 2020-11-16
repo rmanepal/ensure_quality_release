@@ -1,0 +1,44 @@
+name: Azure Pipelines
+variables:
+  python.version: '3.7.6'
+
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    pool:
+      name: Hosted Ubuntu 1604
+    steps:
+    - script: |
+          sudo npm install -g newman --unsafe-perm=true --allow-root
+          export PATH="/home/vsts/.local/bin:$PATH"
+      workingDirectory: '$(build.sourcesdirectory)'
+      displayName: 'Install npm on Command Line Script'
+
+    - script: |
+          ls
+          newman run Starter_APIs.postman_collection.json --reporters cli,junit --reporter-junit-export junitReport.xml
+          ls
+      workingDirectory: '$(build.sourcesdirectory)'
+      displayName: 'Run postman tests'
+
+    - task: PublishTestResults@2
+      displayName: 'Publish Test Results'
+      inputs:
+        testResultsFiles: 'junitReport.xml'
+        testResultsFormat: 'JUnit'
+        testRunTitle: 'Postman API Test'
+        searchFolder: '$(build.sourcesdirectory)'
+        mergeTestResults: false
+        publishRunAttachments: true 
