@@ -77,7 +77,7 @@ stages:
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
     
-    - upload: '$(build.sourcesdirectory)/$(fakerestapiapp).zip'
+    - upload: '$(build.sourcesdirectory)/$(fakerestapiapp)'
       displayName: 'Upload package'
       artifact: drop
 
