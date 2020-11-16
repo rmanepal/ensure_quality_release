@@ -96,15 +96,19 @@ stages:
   - deployment: DeployJobFakeRestAPI
     pool:
       vmImage: $(vmImageName)
-      steps:
-      - task: AzureRmWebAppDeployment@4
-        displayName: 'Deploy fake rest api on azure App Service'
-        inputs:
-          azureSubscription: $(azureSubscription)
-          WebAppName: $(webAppName)
-          packageForLinux: '$(Pipeline.Workspace)/drop/$(fakerestapiapp)'
-          enableCustomDeployment: true
-          DeploymentType: runFromZip
+    environment: 'TEST'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureRmWebAppDeployment@4
+            displayName: 'Deploy fake rest api on azure App Service'
+            inputs:
+              azureSubscription: $(azureSubscription)
+              WebAppName: $(webAppName)
+              packageForLinux: '$(Pipeline.Workspace)/drop/$(fakerestapiapp)'
+              enableCustomDeployment: true
+              DeploymentType: runFromZip
   - deployment: DeploySeleniumOnVM
     displayName: 'Deploy Selenium on VM'
     environment:
