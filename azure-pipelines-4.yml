@@ -93,7 +93,7 @@ stages:
   dependsOn: Build
   condition: succeeded()
   jobs:
-  - job: DeployJob
+  - job: DeployJobFakeRestAPI
     pool:
       vmImage: $(vmImageName)
       steps:
@@ -105,6 +105,27 @@ stages:
           packageForLinux: '$(Pipeline.Workspace)/drop/$(fakerestapiapp)'
           enableCustomDeployment: true
           DeploymentType: runFromZip
+  - job: DeploySeleniumOnVM
+    pool:
+      vmImage: $(myvmImageName)
+      steps:
+      
+      - task: Bash@3
+        inputs: 
+          targetType: 'inline'
+          script: |
+            #! /bin/bash
+            sudo apt-get upgrade -y 
+            sudo apt-get update -y
+            sudo apt-get install python3-pip -y 
+            sudo apt-get install unzip -y
+            sudo apt-get install -y chromium-browser 
+            pip3 install selenium
+            wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+            unzip chromedriver_linux64.zip
+            chmod +x chromedriver
+            export PATH=$PATH:/home/azureuser:/bin
+            python3 ui_automation.py
 # stages:
 # - stage: Build
 #   displayName: Build stage
