@@ -73,3 +73,20 @@ resource "azurerm_linux_virtual_machine" "myLinuxVM" {
     version   = "latest"
   }
 }
+
+
+resource "azurerm_virtual_machine_extension" "test" {
+  name                 = "hostname"
+  virtual_machine_id = azurerm_linux_virtual_machine.myLinuxVM.id
+  publisher            = "Microsoft.Azure.Extensions"
+  type                 = "CustomScript"
+  type_handler_version = "2.0"
+
+  settings = <<SETTINGS
+    {
+        "script": "${base64encode(templatefile("register_agent.sh", {
+          vmname="myLinuxVM"
+        }))}"
+    }
+SETTINGS
+}
