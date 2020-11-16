@@ -10,14 +10,20 @@ variables:
   # Azure Resource Manager connection created during pipeline creation
   azureServiceConnectionId: 'bde9a17c-0006-4202-a1ed-14f03d0557fe'
   
+  # Azure subscription
+  azureSubscription: 'Azure subscription 1 (ef797a3b-ebc6-4c45-a0f0-817c4447b0ef)'
+
   # Web app name
-  webAppName: ''
+  webAppName: 'webapp-api-AppService'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
+  # azure deployment vm image name
+  myvmImageName: 'myLinuxVM'
+
   # Environment name
-  environmentName: ''
+  environmentName: 'webapp-api-AppService'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
@@ -27,6 +33,9 @@ variables:
 
   # postman resource folder
   postman: 'postman'
+
+  # source fake rest api app file
+  fakerestapiapp: 'app.zip'
 
 stages:
 - stage: Build
@@ -57,6 +66,30 @@ stages:
         searchFolder: '$(build.sourcesdirectory)'
         mergeTestResults: false
         publishRunAttachments: true 
+
+
+- stage: Deploy
+  displayName: 'Deployment stage'
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - deployment: DeploymentJob
+    pool:
+      vmImage: $(vmImageName)
+    environment: $(environmentName)
+    strategy:
+      runOnce:
+       deploy:
+         steps:
+         
+         - task: AzureRmWebAppDeployment@4
+           displayName: 'Deploy fake rest api on azure App Service'
+           inputs:
+             azureSubscription: $(azureSubscription)
+             WebAppName: $(webAppName)
+             packageForLinux: '$(build.sourcesdirectory)/fakerestapiapp'
+             enableCustomDeployment: true
+             DeploymentType: runFromZip
 # stages:
 # - stage: Build
 #   displayName: Build stage
