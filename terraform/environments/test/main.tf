@@ -7,18 +7,14 @@ provider "azurerm" {
 }
 terraform {
   backend "azurerm" {
-    resource_group_name = "azuredevopsresource"
-    storage_account_name = "azurestorageudacity"
+    resource_group_name = "azuredevopsresource2"
+    storage_account_name = "azuredevopsstorage1"
     container_name       = "azurecontainer"
     key                  = "prod.terraform.tfstate"
-    access_key           = "XR9x4TCgrd13Hm9yswKVqcGK5kHCG8rwLJ/pxaCFiabD+4F/jXww8zFqirBXGpmZHe/CabemaAzAZrR3ZO5tvQ=="
+    access_key           = "S1cNOD3U7MUUweqE05L08UnM7JMiSidZ0RLjRXXSMgT7sklfDyqtvt+EEP1hQZbO6fsdSLXdta7WcVNefvhOpw=="
   }
 }
 
-resource "azurerm_resource_group" "test" {
-  name     = "${var.resource_group}"
-  location = "${var.location}"
-}
 module "resource_group" {
   source               = "../../modules/resource_group"
   resource_group       = var.resource_group
@@ -56,5 +52,12 @@ module "publicip" {
   location         = "${var.location}"
   application_type = "${var.application_type}"
   resource_type    = "publicip"
+  resource_group   = "${module.resource_group.resource_group_name}"
+}
+
+module "vm" {
+  source           = "../../modules/vm"
+  location         = "${var.location}"
+  application_type = "${var.application_type}"
   resource_group   = "${module.resource_group.resource_group_name}"
 }

@@ -3,5 +3,5 @@ variable location {
     default = "eastus"
 }
 variable "resource_group" {
-    default = "azuredevopsresource"
+    default = "azuredevopsresource1"
 }

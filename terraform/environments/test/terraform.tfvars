@@ -6,7 +6,7 @@ tenant_id = "550891b3-ec22-47bc-9c7e-0c2627b81592"
 
 # Resource Group/Location
 location = "eastus"
-resource_group = "azuredevopsresource"
+resource_group = "azuredevopsresource2"
 application_type = "webapp-api"
 
 # Tags
@@ -15,10 +15,10 @@ deployment = "Terraform"
 tags = "devops"
 
 #storage account name
-storage_name = "azurestorageudacity"
+storage_name = "azurestorageudacity1"
 container_name = "azurecontainer"
 key = "prod.terraform.tfstate"
-access_key = "XR9x4TCgrd13Hm9yswKVqcGK5kHCG8rwLJ/pxaCFiabD+4F/jXww8zFqirBXGpmZHe/CabemaAzAZrR3ZO5tvQ=="
+access_key = "S1cNOD3U7MUUweqE05L08UnM7JMiSidZ0RLjRXXSMgT7sklfDyqtvt+EEP1hQZbO6fsdSLXdta7WcVNefvhOpw=="
 
 # Network
 virtual_network_name = "azuredevopsnetwork"
