@@ -87,7 +87,7 @@ stages:
            inputs:
              azureSubscription: $(azureSubscription)
              WebAppName: $(webAppName)
-             packageForLinux: '$(build.sourcesdirectory)/fakerestapiapp'
+             packageForLinux: '$(build.sourcesdirectory)/$(fakerestapiapp)'
              enableCustomDeployment: true
              DeploymentType: runFromZip
 # stages:
