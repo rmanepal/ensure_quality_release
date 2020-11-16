@@ -68,6 +68,20 @@ stages:
         publishRunAttachments: true 
 
 
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
+      inputs:
+        rootFolderOrFile: '$(projectRoot)'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        replaceExistingArchive: true
+    
+    - upload: '$(build.sourcesdirectory)/$(fakerestapiapp).zip'
+      displayName: 'Upload package'
+      artifact: drop
+
+
 - stage: Deploy
   displayName: 'Deployment stage'
   dependsOn: Build
@@ -87,7 +101,7 @@ stages:
            inputs:
              azureSubscription: $(azureSubscription)
              WebAppName: $(webAppName)
-             packageForLinux: '$(build.sourcesdirectory)/$(fakerestapiapp)'
+             packageForLinux: '$(Pipeline.Workspace)/drop/$(fakerestapiapp)'
              enableCustomDeployment: true
              DeploymentType: runFromZip
 # stages:
