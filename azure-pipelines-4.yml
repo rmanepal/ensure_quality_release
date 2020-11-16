@@ -123,6 +123,7 @@ stages:
           - task: Bash@3
             inputs: 
               targetType: 'inline'
+              workingDirectory: '/home/azureuser'
               script: |
                 #! /bin/bash
                 sudo apt-get upgrade -y 
@@ -133,6 +134,7 @@ stages:
                 pip3 install selenium
                 
                 export PATH=$PATH:/home/azureuser:/bin
+                python3 selenium/ui_automation.py
 # sudo wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
 # sudo unzip chromedriver_linux64.zip
 # sudo chmod +x chromedriver
