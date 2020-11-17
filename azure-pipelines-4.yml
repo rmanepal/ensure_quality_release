@@ -169,8 +169,8 @@ stages:
                 sudo tar -xzf apache-jmeter-5.2.1.tgz
                 sudo rm apache-jmeter-5.2.1.tgz
                 export JMETER_HOME=./jmeter/apache-jmeter-5.2.1/
-                cp -rf '$(Pipeline.Workspace)/$(jmeter)/' ./jmeter/apache-jmeter-5.2.1/bin/
-                ./jmeter/apache-jmeter-5.2.1/bin/jmeter.sh -n -t ./jmeter/apache-jmeter-5.2.1/bin/Jmeter_tests.jmx -l jUnitReport.xml
+                cp -rf '$(Pipeline.Workspace)/$(jmeter)/' .
+                ./jmeter/apache-jmeter-5.2.1/bin/jmeter.sh -n -t Jmeter_tests.jmx -l jUnitReport.xml
 
 # stages:
 # - stage: Build
