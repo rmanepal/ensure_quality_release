@@ -157,12 +157,11 @@ stages:
           - task: Bash@3
             displayName: 'RunIntegrationTests'
             inputs:
-              workingDirectory: '$(build.sourcesdirectory)'
               script: |
                 #! /bin/bash
                 sudo apt-get update y
                 sudo apt-get install python3-pip -y 
-                mkdir jmeter
+                sudo mkdir jmeter
                 cd jmeter
                 wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz
                 tar -xzf apache-jmeter-$JMETER_VERSION.tgz
