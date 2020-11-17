@@ -167,9 +167,9 @@ stages:
                 cd jmeter
                 sudo wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.2.1.tgz
                 sudo tar -xzf apache-jmeter-5.2.1.tgz
-                rm apache-jmeter-5.2.1.tgz
+                sudo rm apache-jmeter-5.2.1.tgz
                 export JMETER_HOME=/jmeter/apache-jmeter-5.2.1/
-                cp -rf '$(Pipeline.Workspace)/$(jmeter)/*' ./bin/jmeter/
+                cp -rf '$(Pipeline.Workspace)/$(jmeter)/' ./bin/jmeter/
                 ./bin/jmeter.sh -n -t Jmeter_tests.jmx -l jUnitReport.xml
 
 # stages:
