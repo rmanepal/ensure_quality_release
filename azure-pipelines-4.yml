@@ -155,7 +155,7 @@ stages:
         deploy:  
           steps:  
           - task: Bash@3
-            displayName: 'Run Integration tests'
+            displayName: 'RunIntegrationTests'
             inputs:
               workingDirectory: '$(build.sourcesdirectory)'
               script: |
