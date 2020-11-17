@@ -65,7 +65,3 @@ print("login successful")
 print(" go through invetory items")
 add_all_elements_to_cart(element_name=INVENTORY_ITEM, driver=driver_login)
 remove_all_elements_from_cart(element_name=INVENTORY_ITEM, driver=driver_login)
-
-
-
-
