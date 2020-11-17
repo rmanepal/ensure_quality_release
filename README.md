@@ -79,7 +79,7 @@ Instrcutions to run:
 		
 		Also updates the envionment in azure pipelines with myLinuxVM
 		
-![Optional Text](./resources/environment.png)
+![Optional Text](./resources/environments.png)
 		
 		
 	
@@ -88,7 +88,7 @@ Instrcutions to run:
 		Build:
 			1. run postman tests and updates the tests Runs
 			
-![Optional Text](./resources/postman_test_runs.png)
+![Optional Text](./resources/postman_tests_runs.png)
 		
 			2. Double click one of the tests runs
 			
