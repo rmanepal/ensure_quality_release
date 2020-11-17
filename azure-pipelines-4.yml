@@ -148,8 +148,8 @@ stages:
   - deployment: RunJMeterTests
     displayName: RunJMeterIntegrationTests  
     pool:
-        vmImage: $(vmImageName)
-    environment: 'Test'
+        vmImage: Hosted Ubuntu 1604
+    environment: 'TEST'
     strategy:
       runOnce:
         deploy:  
@@ -159,6 +159,7 @@ stages:
             inputs:
               script: |
                 #! /bin/bash
+                ls
                 sudo apt-get update y
                 sudo apt-get install python3-pip -y 
                 sudo mkdir jmeter
