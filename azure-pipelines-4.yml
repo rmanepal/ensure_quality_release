@@ -146,6 +146,7 @@ stages:
                 sudo python3 '$(Pipeline.Workspace)/$(selenium)/ui_automation.py'
     
   - deployment: RunJMeterTests
+    dependsOn: DeploySeleniumOnVM
     displayName: RunJMeterIntegrationTests  
     pool:
         vmImage: $(vmImageName)
