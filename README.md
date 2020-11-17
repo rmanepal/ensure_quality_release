@@ -66,20 +66,20 @@ Instrcutions to run:
 			1. update inputs in terraform/environments/test/terraform.tfvars
 			2. Run release pipeline.
 
-		![Optional Text](./resources/terraform_deploy.png)
+![Optional Text](./resources/terraform_deploy.png)
 
 
 			It shall create app services in azure
 
-		![Optional Text](./resources/azure_app_resources.png)
+![Optional Text](./resources/azure_app_resources.png)
 
-		![Optional Text](./resources/myLinuxVM.png)
+![Optional Text](./resources/myLinuxVM.png)
 		
-		![Optional Text](./resouces/ssh_to_linux_vm.png)
+![Optional Text](./resouces/ssh_to_linux_vm.png)
 		
 		Also updates the envionment in azure pipelines with myLinuxVM
 		
-		![Optional Text](./resources/environment.png)
+![Optional Text](./resources/environment.png)
 		
 		
 	
@@ -88,42 +88,42 @@ Instrcutions to run:
 		Build:
 			1. run postman tests and updates the tests Runs
 			
-		![Optional Text](./resources/postman_test_runs.png)
+![Optional Text](./resources/postman_test_runs.png)
 		
 			2. Double click one of the tests runs
 			
-		![Optional Text](./resouces/postman_test_summary.png)
+![Optional Text](./resouces/postman_test_summary.png)
 		
 		
 		Deploy:
 		
 			1. deploy the webapp into app service 
 			
-		![Optional Text](./resouces/fake_rest_api.png)
+![Optional Text](./resouces/fake_rest_api.png)
 		
 			2. run Jmeter integration tests 
 			
-		![Optional Text](./resouces/all_tests_ran.png)
+![Optional Text](./resouces/all_tests_ran.png)
 		
 			3. run Seleinum tests on linux VM 
 		
-		![Optional Text}(./resouces/selenium_tests.png)
+![Optional Text}(./resouces/selenium_tests.png)
 	
 	
 		Succesfull build and deployement
 		
-		![Optional Text](./resouces/build_and_deploy.png)
+![Optional Text](./resouces/build_and_deploy.png)
 		
 	
 	Others:
 	
 		Jmeter Performance tests:
 		
-		![Optional Text](./resouces/jmeter_tests_html.png)
+![Optional Text](./resouces/jmeter_tests_html.png)
 		
 		Log analytics
 		
-		![Optional Text](./resources/log_analytics.png)
+![Optional Text](./resources/log_analytics.png)
 		
 		
 		
