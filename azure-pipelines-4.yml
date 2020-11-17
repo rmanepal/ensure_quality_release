@@ -157,6 +157,7 @@ stages:
           - task: Bash@3
             displayName: 'RunIntegrationTests'
             inputs:
+              targetType: 'inline'
               script: |
                 #! /bin/bash
                 ls
@@ -168,7 +169,7 @@ stages:
                 tar -xzf apache-jmeter-$JMETER_VERSION.tgz
                 rm apache-jmeter-$JMETER_VERSION.tgz
                 export JMETER_HOME=/jmeter/apache-jmeter-$JMETER_VERSION/
-                 cp -rf '$(Pipeline.Workspace)/$(jmeter)/* ./bin/jmeter/'
+                cp -rf '$(Pipeline.Workspace)/$(jmeter)/* ./bin/jmeter/'
                 ./bin/jmeter.sh -n -t Jmeter_tests.jmx -l jUnitReport.xml
 
 # stages:
