@@ -39,6 +39,9 @@ variables:
 
   # selenium folder
   selenium: 'selenium'
+  
+  # jmeter folder
+  jmeter: 'jmeter'
 
 stages:
 - stage: Build
@@ -88,23 +91,87 @@ stages:
       displayName: 'Upload selenium folder'
       artifact: selenium
 
+    - upload: '$(build.sourcesdirectory)/$(jmeter)'
+      displayName: 'Upload Jmeter scripts and csv files'
+      artifact: jmeter
+    
 - stage: Deploy
   displayName: 'Deployment stage'
   dependsOn: Build
   condition: succeeded()
   jobs:
-  - job: DeployJob
+  - deployment: DeployJobFakeRestAPI
     pool:
       vmImage: $(vmImageName)
-      steps:
-      - task: AzureRmWebAppDeployment@4
-        displayName: 'Deploy fake rest api on azure App Service'
-        inputs:
-          azureSubscription: $(azureSubscription)
-          WebAppName: $(webAppName)
-          packageForLinux: '$(Pipeline.Workspace)/drop/$(fakerestapiapp)'
-          enableCustomDeployment: true
-          DeploymentType: runFromZip
+    environment: 'TEST'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureRmWebAppDeployment@4
+            displayName: 'Deploy fake rest api on azure App Service'
+            inputs:
+              azureSubscription: $(azureSubscription)
+              WebAppName: $(webAppName)
+              packageForLinux: '$(Pipeline.Workspace)/drop/$(fakerestapiapp)'
+              enableCustomDeployment: true
+              DeploymentType: runFromZip
+
+
+  - deployment: DeploySeleniumOnVM
+    displayName: 'Deploy Selenium on VM'
+    environment:
+      name: $(myvmImageName) 
+      resourceType: VirtualMachine
+      tags: 'test'
+
+    strategy:
+      runOnce:
+        deploy:  
+          steps:  
+          - task: Bash@3
+            inputs: 
+              targetType: 'inline'
+              workingDirectory: '/home/azureuser'
+              script: |
+                #! /bin/bash
+                sudo apt-get upgrade -y 
+                sudo apt-get update -y
+                sudo apt-get install python3-pip -y 
+                sudo apt-get install unzip -y
+                sudo apt-get install -y chromium-browser 
+                pip3 install selenium
+                
+                export PATH=$PATH:/home/azureuser:/bin
+                sudo python3 '$(Pipeline.Workspace)/$(selenium)/ui_automation.py'
+    
+  - deployment: RunJMeterTests
+    displayName: RunJMeterIntegrationTests  
+    pool:
+        vmImage: $(vmImageName)
+    environment: 'TEST'
+    strategy:
+      runOnce:
+        deploy:  
+          steps:  
+          - task: Bash@3
+            displayName: 'RunIntegrationTests'
+            inputs:
+              targetType: 'inline'
+              script: |
+                #! /bin/bash
+                ls
+                sudo apt-get update y
+                sudo apt-get install python3-pip -y 
+                sudo mkdir jmeter
+                cd jmeter
+                sudo wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.2.1.tgz
+                sudo tar -xzf apache-jmeter-5.2.1.tgz
+                sudo rm apache-jmeter-5.2.1.tgz
+                export JMETER_HOME=/jmeter/apache-jmeter-5.2.1/
+                cp -rf '$(Pipeline.Workspace)/$(jmeter)/' ./bin/jmeter/
+                ./bin/jmeter.sh -n -t Jmeter_tests.jmx -l jUnitReport.xml
+
 # stages:
 # - stage: Build
 #   displayName: Build stage
