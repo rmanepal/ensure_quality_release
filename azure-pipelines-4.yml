@@ -170,7 +170,7 @@ stages:
                 sudo rm apache-jmeter-5.2.1.tgz
                 export JMETER_HOME=./jmeter/apache-jmeter-5.2.1/
                 cp -rf '$(Pipeline.Workspace)/$(jmeter)/' ./jmeter/apache-jmeter-5.2.1/bin/
-                ./jmeter/apache-jmeter-5.2.1/bin/ -n -t ./jmeter/apache-jmeter-5.2.1/bin/Jmeter_tests.jmx -l jUnitReport.xml
+                ./jmeter/apache-jmeter-5.2.1/bin/jmeter.sh -n -t ./jmeter/apache-jmeter-5.2.1/bin/Jmeter_tests.jmx -l jUnitReport.xml
 
 # stages:
 # - stage: Build
