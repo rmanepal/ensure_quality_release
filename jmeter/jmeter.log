@@ -1,0 +1,91 @@
+2020-11-17 08:23:24,484 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2020-11-17 08:23:24,497 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2020-11-17 08:23:24,502 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2020-11-17 08:23:24,503 INFO o.a.j.JMeter: Copyright (c) 1998-2019 The Apache Software Foundation
+2020-11-17 08:23:24,503 INFO o.a.j.JMeter: Version 5.2.1
+2020-11-17 08:23:24,503 INFO o.a.j.JMeter: java.version=1.8.0_202
+2020-11-17 08:23:24,503 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2020-11-17 08:23:24,503 INFO o.a.j.JMeter: os.name=Windows 10
+2020-11-17 08:23:24,503 INFO o.a.j.JMeter: os.arch=amd64
+2020-11-17 08:23:24,503 INFO o.a.j.JMeter: os.version=10.0
+2020-11-17 08:23:24,503 INFO o.a.j.JMeter: file.encoding=Cp1252
+2020-11-17 08:23:24,503 INFO o.a.j.JMeter: java.awt.headless=true
+2020-11-17 08:23:24,503 INFO o.a.j.JMeter: Max memory     =1073741824
+2020-11-17 08:23:24,503 INFO o.a.j.JMeter: Available Processors =12
+2020-11-17 08:23:24,505 INFO o.a.j.JMeter: Default Locale=English (EN)
+2020-11-17 08:23:24,506 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2020-11-17 08:23:24,506 INFO o.a.j.JMeter: JMeterHome=C:\Users\rmanepal\Downloads\apache-jmeter-5.2.1
+2020-11-17 08:23:24,506 INFO o.a.j.JMeter: user.dir  =C:\Users\rmanepal\Downloads\apache-jmeter-5.2.1\bin
+2020-11-17 08:23:24,507 INFO o.a.j.JMeter: PWD       =C:\Users\rmanepal\Downloads\apache-jmeter-5.2.1\bin
+2020-11-17 08:23:29,109 INFO o.a.j.JMeter: IP: 192.168.0.13 Name: MI1-rmanep-5540 FullName: MI1-rmanep-5540.adcorp.kla-tencor.com
+2020-11-17 08:23:29,116 INFO o.a.j.s.FileServer: Default base='C:\Users\rmanepal\Downloads\apache-jmeter-5.2.1\bin'
+2020-11-17 08:23:29,119 INFO o.a.j.s.FileServer: Set new base='D:\Devops\Proj3\git_prj\working\ensure_quality_release\jmeter'
+2020-11-17 08:23:29,205 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2020-11-17 08:23:29,217 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2020-11-17 08:23:29,220 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2020-11-17 08:23:29,225 INFO o.a.j.s.SaveService: Loading file: D:\Devops\Proj3\git_prj\working\ensure_quality_release\jmeter\Jmeter_tests.jmx
+2020-11-17 08:23:29,267 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-11-17 08:23:29,267 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-11-17 08:23:29,267 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-11-17 08:23:29,267 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-11-17 08:23:29,267 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2020-11-17 08:23:29,267 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2020-11-17 08:23:29,302 INFO o.a.j.JMeter: Creating summariser <summary>
+2020-11-17 08:23:29,307 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2020-11-17 08:23:29,317 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2020-11-17 08:23:29,317 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2020-11-17 08:23:29,322 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2020-11-17 08:23:29,322 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2020-11-17 08:23:29,565 INFO o.a.j.JMeter: Running test (1605619409565)
+2020-11-17 08:23:29,587 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Starter
+2020-11-17 08:23:29,587 INFO o.a.j.e.StandardJMeterEngine: Starting 2 threads for group Starter.
+2020-11-17 08:23:29,587 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2020-11-17 08:23:29,589 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=2 ramp-up=1 delayedStart=false
+2020-11-17 08:23:29,592 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2020-11-17 08:23:29,592 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 2 : Endruance Test
+2020-11-17 08:23:29,592 INFO o.a.j.e.StandardJMeterEngine: Starting 2 threads for group Endruance Test.
+2020-11-17 08:23:29,592 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2020-11-17 08:23:29,592 INFO o.a.j.t.ThreadGroup: Starting thread group... number=2 threads=2 ramp-up=1 delayedStart=false
+2020-11-17 08:23:29,596 INFO o.a.j.t.ThreadGroup: Started thread group number 2
+2020-11-17 08:23:29,596 INFO o.a.j.t.JMeterThread: Thread started: Starter 1-1
+2020-11-17 08:23:29,596 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 3 : Stress Test
+2020-11-17 08:23:29,596 INFO o.a.j.e.StandardJMeterEngine: Starting 2 threads for group Stress Test.
+2020-11-17 08:23:29,596 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2020-11-17 08:23:29,596 INFO o.a.j.t.ThreadGroup: Starting thread group... number=3 threads=2 ramp-up=1 delayedStart=false
+2020-11-17 08:23:29,598 INFO o.a.j.t.ThreadGroup: Started thread group number 3
+2020-11-17 08:23:29,598 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2020-11-17 08:23:29,623 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = MI1-rmanep-5540
+2020-11-17 08:23:29,628 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2020-11-17 08:23:29,630 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2020-11-17 08:23:29,630 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2020-11-17 08:23:29,630 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2020-11-17 08:23:29,630 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2020-11-17 08:23:29,688 INFO o.a.j.t.JMeterThread: Thread started: Endruance Test 2-1
+2020-11-17 08:23:29,689 INFO o.a.j.s.FileServer: Stored: users.csv
+2020-11-17 08:23:29,690 INFO o.a.j.t.JMeterThread: Thread started: Stress Test 3-1
+2020-11-17 08:23:29,695 INFO o.a.j.s.FileServer: Stored: book_ids.csv
+2020-11-17 08:23:29,913 INFO o.a.j.p.h.s.h.LazyLayeredConnectionSocketFactory: Setting up HTTPS TrustAll Socket Factory
+2020-11-17 08:23:29,917 INFO o.a.j.u.JsseSSLManager: Using default SSL protocol: TLS
+2020-11-17 08:23:29,917 INFO o.a.j.u.JsseSSLManager: SSL session context: per-thread
+2020-11-17 08:23:30,093 INFO o.a.j.t.JMeterThread: Thread started: Starter 1-2
+2020-11-17 08:23:30,188 INFO o.a.j.t.JMeterThread: Thread started: Endruance Test 2-2
+2020-11-17 08:23:30,188 INFO o.a.j.t.JMeterThread: Thread started: Stress Test 3-2
+2020-11-17 08:23:30,279 INFO o.a.j.u.SSLManager: JmeterKeyStore Location:  type JKS
+2020-11-17 08:23:30,279 INFO o.a.j.u.SSLManager: KeyStore created OK
+2020-11-17 08:23:30,279 WARN o.a.j.u.SSLManager: Keystore file not found, loading empty keystore
+2020-11-17 08:23:39,232 INFO o.a.j.t.JMeterThread: Thread is done: Starter 1-2
+2020-11-17 08:23:39,232 INFO o.a.j.t.JMeterThread: Thread finished: Starter 1-2
+2020-11-17 08:23:39,247 INFO o.a.j.t.JMeterThread: Thread is done: Starter 1-1
+2020-11-17 08:23:39,247 INFO o.a.j.t.JMeterThread: Thread finished: Starter 1-1
+2020-11-17 08:23:40,630 INFO o.a.j.t.JMeterThread: Thread is done: Endruance Test 2-1
+2020-11-17 08:23:40,630 INFO o.a.j.t.JMeterThread: Thread finished: Endruance Test 2-1
+2020-11-17 08:23:40,632 INFO o.a.j.t.JMeterThread: Thread is done: Endruance Test 2-2
+2020-11-17 08:23:40,632 INFO o.a.j.t.JMeterThread: Thread finished: Endruance Test 2-2
+2020-11-17 08:23:40,722 INFO o.a.j.t.JMeterThread: Thread is done: Stress Test 3-2
+2020-11-17 08:23:40,722 INFO o.a.j.t.JMeterThread: Thread finished: Stress Test 3-2
+2020-11-17 08:23:40,925 INFO o.a.j.t.JMeterThread: Thread is done: Stress Test 3-1
+2020-11-17 08:23:40,926 INFO o.a.j.t.JMeterThread: Thread finished: Stress Test 3-1
+2020-11-17 08:23:40,927 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2020-11-17 08:23:40,927 INFO o.a.j.s.FileServer: Close: book_ids.csv
+2020-11-17 08:23:40,928 INFO o.a.j.s.FileServer: Close: users.csv
+2020-11-17 08:23:40,931 INFO o.a.j.r.Summariser: summary =     40 in 00:00:11 =    3.5/s Avg:  1545 Min:    51 Max:  9629 Err:     0 (0.00%)
