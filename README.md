@@ -66,7 +66,7 @@ Instrcutions to run:
 			1. update inputs in terraform/environments/test/terraform.tfvars
 			2. Run release pipeline.
 
-![Optional Text](./resources/terraform_deploy.png)
+![Optional Text](./resources/terraform_deployment.png)
 
 
 			It shall create app services in azure
@@ -75,7 +75,7 @@ Instrcutions to run:
 
 ![Optional Text](./resources/myLinuxVM.png)
 		
-![Optional Text](./resouces/ssh_to_linux_vm.png)
+![Optional Text](./resources/ssh_to_linux_vm.png)
 		
 		Also updates the envionment in azure pipelines with myLinuxVM
 		
@@ -92,34 +92,34 @@ Instrcutions to run:
 		
 			2. Double click one of the tests runs
 			
-![Optional Text](./resouces/postman_test_summary.png)
+![Optional Text](./resources/postman_test_summary.png)
 		
 		
 		Deploy:
 		
 			1. deploy the webapp into app service 
 			
-![Optional Text](./resouces/fake_rest_api.png)
+![Optional Text](./resources/fake_rest_api.png)
 		
 			2. run Jmeter integration tests 
 			
-![Optional Text](./resouces/all_tests_ran.png)
+![Optional Text](./resources/all_tests_ran.png)
 		
 			3. run Seleinum tests on linux VM 
 		
-![Optional Text}(./resouces/selenium_tests.png)
+![Optional Text}(./resources/selenium_tests.png)
 	
 	
 		Succesfull build and deployement
 		
-![Optional Text](./resouces/build_and_deploy.png)
+![Optional Text](./resources/build_and_deploy.png)
 		
 	
 	Others:
 	
 		Jmeter Performance tests:
 		
-![Optional Text](./resouces/jmeter_tests_html.png)
+![Optional Text](./resources/jmeter_tests_html.png)
 		
 		Log analytics
 		
