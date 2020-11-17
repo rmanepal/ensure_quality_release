@@ -165,8 +165,8 @@ stages:
                 sudo apt-get install python3-pip -y 
                 sudo mkdir jmeter
                 cd jmeter
-                wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz
-                tar -xzf apache-jmeter-$JMETER_VERSION.tgz
+                sudo wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.2.1.tgz
+                sudo tar -xzf apache-jmeter-$JMETER_VERSION.tgz
                 rm apache-jmeter-$JMETER_VERSION.tgz
                 export JMETER_HOME=/jmeter/apache-jmeter-$JMETER_VERSION/
                 cp -rf '$(Pipeline.Workspace)/$(jmeter)/* ./bin/jmeter/'
