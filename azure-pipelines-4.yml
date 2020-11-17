@@ -148,7 +148,7 @@ stages:
   - deployment: RunJMeterTests
     displayName: RunJMeterIntegrationTests  
     pool:
-        vmImage: Hosted Ubuntu 1604
+        vmImage: $(vmImageName)
     environment: 'TEST'
     strategy:
       runOnce:
