@@ -126,7 +126,9 @@ Instrcutions to run:
 ![Optional Text](./resources/log_analytics.png)
 		
 		
-		
+		Azure alert to mail
+
+![Optional Text](./resources/azure_alert.png)
 	
 			
 
