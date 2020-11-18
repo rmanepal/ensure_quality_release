@@ -141,6 +141,13 @@ stages:
                 sudo apt-get update -y
                 sudo apt-get install python3-pip -y 
                 sudo apt-get install unzip -y
+                sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+                sudo dpkg -i google-chrome-stable_current_amd64.deb
+                sudo apt-get install -y unzip xvfb libxi6 libgconf-2-4
+                sudo wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+                sudo unzip chromedriver_linux64.zip
+                sudo mv chromedriver /home/azureuser/chromedriver
+                sudo apt install python3-pip
                 sudo apt-get install -y chromium-browser 
                 pip3 install selenium
                 
