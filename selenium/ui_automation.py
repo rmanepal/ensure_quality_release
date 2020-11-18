@@ -56,7 +56,7 @@ def remove_all_elements_from_cart(element_name, driver):
         add_to_cart_button = item.find_element_by_css_selector("button[class='btn_secondary btn_inventory']")
         add_to_cart_button.click()
     
-        print(" All items are removed from cart: {}".format(len(elements)))
+    print(" All items are removed from cart: {}".format(len(elements)))
 
 print(" login test")
 driver_login = login(USERNAME, PASSWORD)
