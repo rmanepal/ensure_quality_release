@@ -33,8 +33,7 @@ variables:
 
   # postman resource folder
   postman: 'postman'
-  postman_data_validation_json: 'Data_validation_suite.postman_collection.json'
-  postman_regressiont_test_json: 'Regression_test_suite.postman_collection.json'
+  postman_tests_json: 'post-man-tests.postman_collection.json'
 
 
   # source fake rest api app file
@@ -61,9 +60,7 @@ stages:
 
     - script: |
           ls
-          newman run '$(postman)/Starter_APIs.postman_collection.json' --reporters cli,junit --reporter-junit-export junitStarterApiReport.xml
-          newman run '$(postman)/$(postman_data_validation_json)' --reporters cli,junit --reporter-junit-export junitdatavalidationReport.xml
-          newman run '$(postman)/$(postman_data_validation_json)' --reporters cli,junit --reporter-junit-export junitregressionTestReport.xml
+          newman run '$(postman)/$(postman_tests_json)' --reporters cli,junit --reporter-junit-export junitStarterApiReport.xml
           ls
       workingDirectory: '$(build.sourcesdirectory)'
       displayName: 'Run postman tests'
