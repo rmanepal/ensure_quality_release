@@ -33,6 +33,8 @@ variables:
 
   # postman resource folder
   postman: 'postman'
+  postman_tests_json: 'post-man-tests.postman_collection.json'
+
 
   # source fake rest api app file
   fakerestapiapp: 'app.zip'
@@ -58,7 +60,7 @@ stages:
 
     - script: |
           ls
-          newman run '$(postman)/Starter_APIs.postman_collection.json' --reporters cli,junit --reporter-junit-export junitReport.xml
+          newman run '$(postman)/$(postman_tests_json)' --reporters cli,junit --reporter-junit-export junitStarterApiReport.xml
           ls
       workingDirectory: '$(build.sourcesdirectory)'
       displayName: 'Run postman tests'
@@ -66,7 +68,7 @@ stages:
     - task: PublishTestResults@2
       displayName: 'Publish Test Results'
       inputs:
-        testResultsFiles: 'junitReport.xml'
+        testResultsFiles: 'junit*.xml'
         testResultsFormat: 'JUnit'
         testRunTitle: 'Postman API Test'
         searchFolder: '$(build.sourcesdirectory)'
