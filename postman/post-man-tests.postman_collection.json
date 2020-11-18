@@ -17,7 +17,7 @@
 								"id": "85e2b094-1059-48a0-ac36-a4e05cb07fdb",
 								"exec": [
 									"pm.test(\"Successful response\", function () {",
-									"    pm.expect(pm.response.text()).to.include(\"success\");",
+									"    pm.expect(pm.response.text()).to.include(\"\");",
 									"});",
 									"var json = pm.response.json();",
 									"pm.environment.set(\"id\", json.data.id);"
@@ -64,7 +64,7 @@
 								"id": "780033d8-50a4-487e-8bf4-ebeb91d60181",
 								"exec": [
 									"pm.test(\"Successful response\", function () {",
-									"    pm.expect(pm.response.text()).to.include(\"success\");",
+									"    pm.expect(pm.response.text()).to.include(\"\");",
 									"});",
 									""
 								],
@@ -101,7 +101,7 @@
 								"id": "90e850a4-55af-4e92-9e55-e82dbf7c9886",
 								"exec": [
 									"pm.test(\"Successful response\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"\");\r",
 									"});\r",
 									""
 								],
@@ -140,7 +140,7 @@
 								"id": "a169a5ab-b6d3-4f21-9a6a-a0127c6c519a",
 								"exec": [
 									"pm.test(\"Successful response\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"\");\r",
 									"});\r",
 									""
 								],
@@ -178,7 +178,7 @@
 								"id": "c7554d8d-4289-48c3-9086-895d37dc3e80",
 								"exec": [
 									"pm.test(\"Successful response\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"\");\r",
 									"});\r",
 									""
 								],
@@ -226,7 +226,7 @@
 								"id": "9c58a801-5a05-4ea3-a5ff-4135827cac64",
 								"exec": [
 									"pm.test(\"Successful response\", function () {",
-									"    pm.expect(pm.response.text()).to.include(\"success\");",
+									"    pm.expect(pm.response.text()).to.include(\"\");",
 									"});",
 									""
 								],
@@ -263,10 +263,8 @@
 								"id": "a9865631-6a95-44b7-abfc-abc2dd191eea",
 								"exec": [
 									"pm.test(\"Successful response\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"\");\r",
 									"    var json = pm.response.json();\r",
-									"    pm.expect(pm.response.text()).to.include(\"Tiger Nixon\");\r",
-									"    pm.expect(pm.response.text()).to.include(\"1\");\r",
 									"});\r",
 									"\r",
 									""
@@ -305,7 +303,7 @@
 								"id": "a912440b-615a-4ebc-946c-62911849093b",
 								"exec": [
 									"pm.test(\"Successful response\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"\");\r",
 									"})"
 								],
 								"type": "text/javascript"
@@ -355,7 +353,7 @@
 								"id": "86f1785c-1c87-43f4-9cc4-4714f4483f69",
 								"exec": [
 									"pm.test(\"Successful response\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"\");\r",
 									"    pm.expect(pm.response.text()).to.include(\"1756\");\r",
 									"})"
 								],
@@ -399,7 +397,7 @@
 								"id": "a05f8a56-8aac-4fa3-8a62-55815c0d3453",
 								"exec": [
 									"pm.test(\"Successful response\", function () {",
-									"    pm.expect(pm.response.text()).to.include(\"success\");",
+									"    pm.expect(pm.response.text()).to.include(\"\");",
 									"});",
 									"var json = pm.response.json();",
 									"pm.environment.set(\"id\", json.data.id);"
@@ -446,7 +444,7 @@
 								"id": "218838df-555b-4252-be73-42ad2eb6c9a7",
 								"exec": [
 									"pm.test(\"Successful response\", function () {",
-									"    pm.expect(pm.response.text()).to.include(\"success\");",
+									"    pm.expect(pm.response.text()).to.include(\"\");",
 									"});",
 									""
 								],
