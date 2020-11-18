@@ -177,7 +177,7 @@ stages:
                 sudo ls -R jmeter
                 sudo ./apache-jmeter-5.2.1/bin/jmeter.sh -n -t Jmeter_tests.jmx -l test_results.csv
                 sudo mkdir results
-                sudo jmeter -g test_results.csv -o results 
+                sudo ./apache-jmeter-5.2.1/bin/jmeter.sh -g test_results.csv -o results 
           - task: PublishTestResults@2
             displayName: 'Publish JMeter Integration test Results'
             inputs:
