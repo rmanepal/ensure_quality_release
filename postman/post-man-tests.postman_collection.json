@@ -264,7 +264,6 @@
 								"exec": [
 									"pm.test(\"Successful response\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"\");\r",
-									"    var json = pm.response.json();\r",
 									"});\r",
 									"\r",
 									""
