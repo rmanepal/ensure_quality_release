@@ -1,0 +1,33 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  azureServiceConnectionId: 'Azure subscription 1(ef797a3b-ebc6-4c45-a0f0-817c4447b0ef)'
+
+steps:
+
+    - task: UseDotNet@2 
+      displayName: ".NET Core 3.1.x"
+      inputs:
+        version: '3.1.x'
+        packageType: sdk
+    - script: |
+        mkdir release
+        cp app.zip release/
+        cp -rf terraform release/
+      displayName: 'dotnet build $(buildConfiguration)'
+
+    - task: PublishBuildArtifacts@1
+      displayName: "Upload Artifacts"
+      inputs:
+        pathtoPublish: '$(System.DefaultWorkingDirectory)/release' 
+        artifactName: 'output' 
