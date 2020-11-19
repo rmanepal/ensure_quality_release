@@ -32,7 +32,7 @@ def login (user, password):
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
-    driver = webdriver.Chrome("D:\Devops\Proj3\chrome_driver\chromedriver", options=chrome_options)
+    driver = webdriver.Chrome("/home/azureuser/chromedriver", options=chrome_options)
     info ('Browser started successfully. Navigating to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
 
