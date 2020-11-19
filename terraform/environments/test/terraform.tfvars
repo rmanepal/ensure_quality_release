@@ -6,7 +6,7 @@ tenant_id = "550891b3-ec22-47bc-9c7e-0c2627b81592"
 
 # Resource Group/Location
 location = "eastus"
-resource_group = "azuredevopsresource3"
+resource_group = "azuredevopsresource4"
 application_type = "webapp-api"
 
 # Tags
